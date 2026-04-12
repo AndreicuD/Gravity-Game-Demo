@@ -1,10 +1,14 @@
-<b>https://youtu.be/eomK7YZ2KoQ</b>
+<p align="center">Small presentation video for the competition: <b>https://youtu.be/eomK7YZ2KoQ</b> (*it's in Romanian*)</p>
 
 # <p align="center">Tales of the Underworld - What if up wasn’t up?</p>
 
 <b>A minimalist 2D physics-based platformer</b> built around puzzle-solving and a short narrative. You play in a world of black, white, and gray — a visual style that keeps essentials clear while keeping the vibe. Use the <b>*Quantum Cloak*</b> to phase through select walls and the <b>*Gravi-Boots*</b> to flip gravity on command. 
 
 Navigate through logic-driven levels using moving platforms, buttons, doors, and interactive boxes that respond to both physics and gravity. A checkpoint-based save/load system supports thoughtful exploration, while optional coins and collectibles offer a challenge for completionists. Every level is a puzzle — every mechanic is a key.
+
+<img width="500" alt="Screenshot 2025-04-13 003050" src="https://github.com/user-attachments/assets/e326d011-d096-4e28-9688-8ce6482f5df9" />
+<img width="500" alt="Screenshot 2025-04-13 003416" src="https://github.com/user-attachments/assets/959bd79e-2558-4b66-9997-8a63de792218" />
+<img width="1920" height="1080" alt="Screenshot 2025-04-13 003324" src="https://github.com/user-attachments/assets/95cd33d0-7822-4dc6-a09c-f202fb2b6dbf" />
 
 ## 🕹️ Core Mechanics
 
