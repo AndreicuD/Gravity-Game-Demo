@@ -117,36 +117,36 @@ func start_quest(quest_id: String) -> bool:
 	if not quests.has(quest_id):
 		push_error("Quest ID not found: " + quest_id)
 		return false
-		
+
 	if quests[quest_id]["completed"]:
 		print("Quest already completed: " + quest_id)
 		return false
-	
+
 	emit_signal("quest_started", quest_id)
 	quests[quest_id]['started'] = true
 	print("Started quest: " + quests[quest_id]["title"])
 	return true
-	
+
 func complete_quest(quest_id: String) -> bool:
 	if not quests.has(quest_id):
 		push_error("Quest ID not found: " + quest_id)
 		return false
-	
+
 	var quest = quests[quest_id]
 	if quest["completed"]:
 		print("Quest already completed: " + quest_id)
 		return false
-	
+
 	# Mark as completed
 	quest["completed"] = true
-	
+
 	# Award rewards
 	if quest["rewards"]["money"] > 0:
 		Global.add_currency(quest["rewards"]["money"])
-	
+
 	if quest["rewards"]["key_piece"] != "":
 		obtain_key_piece(quest["rewards"]["key_piece"])
-	
+
 	emit_signal("quest_completed", quest_id)
 	print("Completed quest: " + quest["title"])
 	return true
@@ -155,14 +155,14 @@ func is_quest_completed(quest_id: String) -> bool:
 	if not quests.has(quest_id):
 		push_error("Quest ID not found: " + quest_id)
 		return false
-	
+
 	return quests[quest_id]["completed"]
 
 func is_quest_started(quest_id: String) -> bool:
 	if not quests.has(quest_id):
 		push_error("Quest ID not found: " + quest_id)
 		return false
-	
+
 	return quests[quest_id]["started"]
 
 # Key Piece Functions
@@ -170,25 +170,25 @@ func obtain_key_piece(piece_id: String) -> bool:
 	if not key_pieces.has(piece_id):
 		push_error("Key piece ID not found: " + piece_id)
 		return false
-	
+
 	if key_pieces[piece_id]["obtained"]:
 		print("Key piece already obtained: " + piece_id)
 		return false
-	
+
 	key_pieces[piece_id]["obtained"] = true
 	emit_signal("key_piece_obtained", piece_id)
 	#print("Obtained key piece: " + key_pieces[piece_id]["name"])
-	
+
 	# Check if all pieces collected
 	check_game_completion()
-	
+
 	return true
 
 func has_key_piece(piece_id: String) -> bool:
 	if not key_pieces.has(piece_id):
 		push_error("Key piece ID not found: " + piece_id)
 		return false
-	
+
 	return key_pieces[piece_id]["obtained"]
 
 func get_all_key_pieces() -> Array:
@@ -203,7 +203,7 @@ func check_game_completion() -> bool:
 	for piece_id in key_pieces:
 		if not key_pieces[piece_id]["obtained"]:
 			return false
-	
+
 	# All key pieces obtained, game completed!
 	Global.GAME_COMPLETED = true
 	print("All key pieces obtained! Game completed!")

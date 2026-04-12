@@ -11,10 +11,15 @@ config_version=5
 [application]
 
 config/name="Tales of the Underworld"
+config/description="A minimalist 2D physics-based platformer built around puzzle-solving and a short narrative. You play in a world of black, white, and gray — a visual style that keeps essentials clear while keeping the vibe. Use the Quantum Cloak to phase through select walls and the Gravi-Boots to flip gravity on command."
 config/tags=PackedStringArray("2d", "physics", "tilemap")
 run/main_scene="res://Game.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+run/print_header=false
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.5", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://bvv6vp7pfyw6"
+config/icon="uid://cedid0hx5svqc"
 
 [autoload]
 
@@ -31,7 +36,7 @@ window/stretch/mode="viewport"
 
 [dotnet]
 
-project/assembly_name="VVVVVV-style"
+project/assembly_name="Tales of the Underworld"
 
 [global_group]
 

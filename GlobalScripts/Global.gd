@@ -55,6 +55,7 @@ func _ready():
 	Quest.child_found = false
 	Quest.selfish_spoken_to = false
 	Quest.money_found_2 = false
+
 	PLAYER = get_tree().get_first_node_in_group("Player")
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	gravity_cooldown = Timer.new()
@@ -67,7 +68,7 @@ func _ready():
 	pass
 
 func _physics_process(_delta):
-	print(Quest.key_pieces)
+	#print(Quest.key_pieces)
 	#reset player if health is below 0
 	if !Global.levels_visited.is_empty():
 		max_level = levels_visited.back()
@@ -226,7 +227,7 @@ func save_game():
 		"what_is_saved" : "currency",
 		"amount" : CURRENCY
 	}
-	
+
 	var quest_dic = {
 		"what_is_saved" : "quest",
 		"quests" : Quest.quests,
@@ -238,7 +239,7 @@ func save_game():
 		"selfish_spoken_to" : Quest.selfish_spoken_to,
 		"money_found_2" : Quest.money_found_2,
 	}
-	
+
 	var level_dic = {
 		"what_is_saved" : "level_info",
 		"levels" : levels_visited,
